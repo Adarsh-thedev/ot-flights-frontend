@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ot-flights-frontend/static/css/main.ffe9e8e0.chunk.css",
+    "main.js": "/ot-flights-frontend/static/js/main.bd78c1a6.chunk.js",
+    "main.js.map": "/ot-flights-frontend/static/js/main.bd78c1a6.chunk.js.map",
+    "runtime-main.js": "/ot-flights-frontend/static/js/runtime-main.142c272f.js",
+    "runtime-main.js.map": "/ot-flights-frontend/static/js/runtime-main.142c272f.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/ot-flights-frontend/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.10e9e1c6.chunk.js": "/ot-flights-frontend/static/js/2.10e9e1c6.chunk.js",
+    "static/js/2.10e9e1c6.chunk.js.map": "/ot-flights-frontend/static/js/2.10e9e1c6.chunk.js.map",
+    "index.html": "/ot-flights-frontend/index.html",
+    "precache-manifest.afab3b7c0caf89054ff8e4bd82e3426f.js": "/ot-flights-frontend/precache-manifest.afab3b7c0caf89054ff8e4bd82e3426f.js",
+    "service-worker.js": "/ot-flights-frontend/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/ot-flights-frontend/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.ffe9e8e0.chunk.css.map": "/ot-flights-frontend/static/css/main.ffe9e8e0.chunk.css.map",
+    "static/js/2.10e9e1c6.chunk.js.LICENSE.txt": "/ot-flights-frontend/static/js/2.10e9e1c6.chunk.js.LICENSE.txt",
+    "static/media/home-img.png": "/ot-flights-frontend/static/media/home-img.05ad5d34.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.142c272f.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.10e9e1c6.chunk.js",
+    "static/css/main.ffe9e8e0.chunk.css",
+    "static/js/main.bd78c1a6.chunk.js"
+  ]
+}
