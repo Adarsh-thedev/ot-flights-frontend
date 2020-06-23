@@ -3,6 +3,7 @@ import Logo from './Components/Logo';
 import './App.css';
 import Header from './Components/Header';
 import FlightSearch from './Components/Flightsearch';
+import Stats from './Components/Stats';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Logo/>
       <Header/>
       <FlightSearch/>
+      <Stats/>
     </React.Fragment>
   );
 }
