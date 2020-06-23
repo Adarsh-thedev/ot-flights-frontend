@@ -2,14 +2,14 @@ import React from 'react';
 import Logo from './Components/Logo';
 import './App.css';
 import Header from './Components/Header';
-import Booking from './Components/Booking';
+import FlightSearch from './Components/Flightsearch';
 
 function App() {
   return (
     <React.Fragment>
       <Logo/>
       <Header/>
-      <Booking/>
+      <FlightSearch/>
     </React.Fragment>
   );
 }
