@@ -5,8 +5,8 @@ const Logo = () => {
         <div className = 'nav'>
             <div className = 'container'>
                 <a className = 'navbar-brand' href = '/'>
-                    <img className = 'mr1' src = '/assets/logo.png' alt = 'logo'/>
-                    <span style = {{fontFamily : 'Nunito, sans-serif', verticalAlign : 'middle'}} className = 'dib h2 b ml3 text-primary'>OpenTabs</span>
+                    <img className = 'mr3 dim' src = '/assets/logo.png' alt = 'logo'/>
+                    <span style = {{fontFamily : 'Nunito, sans-serif', verticalAlign : 'middle'}} className = 'dib dim h2 b text-primary'>OpenTabs</span>
                 </a>
             </div>
         </div>
