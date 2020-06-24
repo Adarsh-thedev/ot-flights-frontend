@@ -1,5 +1,5 @@
 import React from 'react';
-import Background from './home-img.png';
+import Background from '../assets/home-img.png';
 
 const sectionStyle = {
     backgroundImage : `url(${Background})`,
