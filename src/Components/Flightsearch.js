@@ -96,11 +96,6 @@ const FlightSearch = () => {
                         </div>
                     </div>
                 </div>
-                    <div className = 'row'>
-                        <div className = 'col-xs-12'>
-                            <p>{JSON.stringify(details)}</p>
-                        </div>
-                    </div>
                 <div className="center" style = {{position : 'relative', top : '16px'}}>
                     <button 
                         className="btn blue text-white br-pill dim b"
