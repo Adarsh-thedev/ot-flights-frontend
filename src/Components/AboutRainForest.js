@@ -61,13 +61,13 @@ const AboutRainForest = () => {
                         <div className = 'col-xs-12 col-sm-6 center'>
                             <div style={{color:'white', margin: 'auto'}}>
 								<div className="center mt5"><i aria-hidden="true" className="fa fa-tree fa-4x"></i></div>
-								<p className="mb-0 mt2 f1"><CountUp end = {100} duration = {5}></CountUp><span className = 'ml1'>KG</span>
+								<p className="mb-0 mt2 f1"><CountUp end = {100} duration = {5}></CountUp>
 								</p>
 								<p className="text-white">Trees Planted</p>
 							</div>
                             <div style={{color:'white', margin: 'auto'}}>
 								<div className="center"><i aria-hidden="true" className="fa fa-map fa-4x"></i></div>
-								<p className="mb-0 mt2 f1"><CountUp end = {100} duration = {5}></CountUp><span className = 'ml1'>KG</span>
+								<p className="mb-0 mt2 f1"><CountUp end = {2} duration = {1}></CountUp>
 								</p>
 								<p className="text-white">Acres Saved</p>
 							</div>
