@@ -5,3 +5,13 @@
 .nav{
   background-color:#fff
 }
+
+.footer{
+  font-family : Nunito, sans-serif;
+  color : #0080ff !important;
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color : #0080ff !important;
+}
