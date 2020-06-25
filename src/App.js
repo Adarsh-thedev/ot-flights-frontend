@@ -3,7 +3,9 @@ import Logo from './Components/Logo';
 import './App.css';
 import Header from './Components/Header';
 import FlightSearch from './Components/Flightsearch';
+import Slide from 'react-reveal/Slide';
 import Stats from './Components/Stats';
+import AboutOpenTabs from './Components/AboutOpenTabs';
 
 function App() {
   return (
@@ -11,7 +13,10 @@ function App() {
       <Logo/>
       <Header/>
       <FlightSearch/>
-      <Stats/>
+      <Slide right>
+        <Stats/>
+        <AboutOpenTabs/>
+      </Slide>
     </React.Fragment>
   );
 }
