@@ -10,9 +10,19 @@ const backgroundStyle = {
     fontFamily : 'Nunito, sans-serif'
 }
 
+const manualOpacity = {
+    backgroundColor: 'black', 
+    opacity: '0.5', 
+    position: 'absolute', 
+    width: '100%', 
+    height: '100%',
+     top: '0px'
+}
+
 const AboutCarbonOffset = () => {
     return(
         <div className = 'no-margin' style = {backgroundStyle}>
+            <div style={manualOpacity}></div>
             <div className = 'container'>
                 <div className="row">
                     <div className="col-xs-12 col-sm-8 mt5">
