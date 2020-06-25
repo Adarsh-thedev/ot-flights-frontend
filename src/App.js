@@ -7,6 +7,7 @@ import Slide from 'react-reveal/Slide';
 import Stats from './Components/Stats';
 import AboutOpenTabs from './Components/AboutOpenTabs';
 import AboutCarbonOffset from './Components/AboutCarbonOffset';
+import AboutRainForest from './Components/AboutRainForest';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Stats/>
         <AboutOpenTabs/>
         <AboutCarbonOffset/>
+        <AboutRainForest/>
       </Slide>
     </React.Fragment>
   );
