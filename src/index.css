@@ -20,3 +20,8 @@ code {
 .bg2 {
   background : #F2F3F5;
 }
+
+.no-margin {
+  position: relative;
+  top : -20px !important;
+}
