@@ -8,6 +8,7 @@ import Stats from './Components/Stats';
 import AboutOpenTabs from './Components/AboutOpenTabs';
 import AboutCarbonOffset from './Components/AboutCarbonOffset';
 import AboutRainForest from './Components/AboutRainForest';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <AboutCarbonOffset/>
         <AboutRainForest/>
       </Slide>
+      <Footer/>
     </React.Fragment>
   );
 }
