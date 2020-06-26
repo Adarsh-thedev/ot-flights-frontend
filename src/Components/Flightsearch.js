@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 
 const FlightSearch = () => {
+    let nextDate = new Date();
+    nextDate.setDate(nextDate.getDate() + 7);
+
     const [details, setDetails] = useState({
         travelingDate : `${new Date().toISOString().substr(0,10)}`,
-        returnDate : `${new Date().toISOString().substr(0,10)}`,
+        returnDate : `${nextDate.toISOString().substr(0,10)}`,
         trip : '',
         passengers : '',
         cabin : '',
