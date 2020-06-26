@@ -9,9 +9,17 @@ const FlightSearch = () => {
         returnDate : `${nextDate.toISOString().substr(0,10)}`,
         trip : '',
         passengers : '',
-        cabin : '',
+        cabin : ''
+    });
+
+    const [places, setPlaces] = useState({
         source : '',
         destination : ''
+    });
+
+    const [suggetion, setSuggetion] = useState({
+        sourceSuggestion : [],
+        destinationSuggtion : []
     });
 
     const handleChange = name => event => {
@@ -21,7 +29,43 @@ const FlightSearch = () => {
         });
     }
 
-    const {travelingDate, returnDate, passengers, trip, cabin, source, destination} = details;
+    const {travelingDate, returnDate, passengers, trip, cabin} = details;
+    const {source, destination} = places;
+    const {sourceSuggestion, destinationSuggtion} = suggetion;
+
+    const handlePlaceChange = name => event => {
+        setPlaces({
+            ...places,
+            [name] : event.target.value
+        });
+
+        return fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/EUR/en-US/?query=${event.target.value}`,{
+            headers : {
+                "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+                "x-rapidapi-key":"f85b4d018emsh31896ab868646e1p14a6d7jsn45ecae1f6a58"
+            }
+        })
+        .then(response =>{
+            return response.json()
+        })
+        .then(data => {
+            if(name === 'source') {
+                setSuggetion({
+                    ...suggetion,
+                    sourceSuggestion : data
+                })
+            }
+            if(name === 'destination') {
+                setSuggetion({
+                    ...suggetion,
+                    destinationSuggtion : data
+                })
+            }
+            console.log(sourceSuggestion);
+            console.log(destinationSuggtion);
+        })
+        .catch(err => console.log(err))
+    }
 
     return(
         <div className = 'container' style ={{position : 'relative', bottom : '20px'}}>
@@ -60,7 +104,7 @@ const FlightSearch = () => {
                                 className="form-control" 
                                 placeholder='From'
                                 value = {source}
-                                onChange = {handleChange('source')}
+                                onChange = {handlePlaceChange('source')}
                             />
                         </div>
                     </div>
@@ -72,7 +116,7 @@ const FlightSearch = () => {
                                 className="form-control" 
                                 placeholder="Where to?"
                                 value={destination}
-                                onChange = {handleChange('destination')}
+                                onChange = {handlePlaceChange('destination')}
                             />
                         </div>
                     </div>
