@@ -23,9 +23,10 @@ const FlightSearch = () => {
         fetch('https://www.travelpayouts.com/whereami?locale=en')
         .then(response => response.json())
         .then(data =>setPlaces({
-            ...places, source : `${data.name} - ${data.iata}`
+            ...places, 
+            source : `${data.name} - ${data.iata}`
         }))
-    });
+    },[]);
 
     const [suggetion, setSuggetion] = useState({
         sourceSuggestion : [],
