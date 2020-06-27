@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 
 const FlightSearch = () => {
     let nextDate = new Date();
@@ -15,6 +16,15 @@ const FlightSearch = () => {
     const [places, setPlaces] = useState({
         source : '',
         destination : ''
+    });
+
+    //set default source as the nearest international airport
+    useEffect(()=> {
+        fetch('https://www.travelpayouts.com/whereami?locale=en')
+        .then(response => response.json())
+        .then(data =>setPlaces({
+            ...places, source : `${data.name} - ${data.iata}`
+        }))
     });
 
     const [suggetion, setSuggetion] = useState({
