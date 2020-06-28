@@ -84,9 +84,10 @@ const FlightSearch = () => {
         event.preventDefault();
         console.log('Event triggered');
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = `https://api.travelpayouts.com/v1/prices/cheap?origin=${source.slice(source.length-3)}&
-                    destination=${destination.slice(destination.length-3)}&depart_date=${travelingDate}&return_date=${returnDate}&
-                    currency=EUR`;
+        const url = trip === 'Round trip' ? `https://api.travelpayouts.com/v1/prices/cheap?origin=${source.slice(source.length-3)}&
+                    destination=${destination.slice(destination.length-3)}&depart_date=${travelingDate}&return_date=${returnDate}&currency=EUR` 
+                    : `https://api.travelpayouts.com/v1/prices/cheap?origin=${source.slice(source.length-3)}&
+                    destination=${destination.slice(destination.length-3)}&depart_date=${travelingDate}&currency=EUR`;
         fetch(proxyurl+url,{
             headers:{
                 "x-access-token":"aab719c2a3af14867bb33e77183f05e7"
@@ -109,8 +110,8 @@ const FlightSearch = () => {
                 <div className = 'top d-flex container ml-2'>
                     <div className="input-field ml1 select-div">
                         <select value = {trip} onChange = {handleChange('trip')} className = 'pointer browser-default bn'>
-                            <option style={{color : 'black'}}>Round trip</option>
                             <option style={{color : 'black'}}>One way</option>
+                            <option style={{color : 'black'}}>Round trip</option>
                         </select>
                     </div>
                     <div className="input-field ml1 select-div">
