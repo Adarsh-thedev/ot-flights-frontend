@@ -78,6 +78,27 @@ const FlightSearch = () => {
         .catch(err => console.log(err))
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Event triggered');
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url = `https://api.travelpayouts.com/v1/prices/cheap?origin=${source.slice(source.length-3)}&
+                    destination=${destination.slice(destination.length-3)}&depart_date=2020-11&return_date=2020-12&
+                    currency=usd`;
+        fetch(proxyurl+url,{
+            headers:{
+                "x-access-token":"aab719c2a3af14867bb33e77183f05e7"
+            }
+        })
+        .then(response =>{
+            return response.json()
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(err => console.log(err))
+    }
+
     return(
         <div className = 'container' style ={{position : 'relative', bottom : '20px'}}>
             <form className = 'br4 shadow-3 bg1'>
@@ -135,7 +156,7 @@ const FlightSearch = () => {
                         <label className = 'b f5'>DEPART</label>
                         <div>
                             <input 
-                                type="date" 
+                                type="date"
                                 className="form-control" 
                                 value={travelingDate}
                                 onChange = {handleChange('travelingDate')}
@@ -157,7 +178,12 @@ const FlightSearch = () => {
                 <div className="center" style = {{position : 'relative', top : '16px'}}>
                     <button 
                         className="btn blue text-white br-pill dim b"
-                        // onClick = {handleClick}
+                        onClick = {handleSubmit}
+                        onKeyPress = {(e) => {
+                            if(e.keyCode === 13) {
+                                handleSubmit();
+                            }
+                        }}
                     >
                         <i className="fa fa-send mr-2" aria-hidden="true"></i>
                         Search Flights
