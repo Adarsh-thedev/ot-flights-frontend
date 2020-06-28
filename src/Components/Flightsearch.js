@@ -8,9 +8,9 @@ const FlightSearch = () => {
     const [details, setDetails] = useState({
         travelingDate : `${new Date().toISOString().substr(0,10)}`,
         returnDate : `${nextDate.toISOString().substr(0,10)}`,
-        trip : '',
-        passengers : '',
-        cabin : ''
+        trip : 'One way',
+        passengers : '1 Passenger',
+        cabin : 'Economy'
     });
 
     const [places, setPlaces] = useState({
@@ -109,21 +109,18 @@ const FlightSearch = () => {
                 <div className = 'top d-flex container ml-2'>
                     <div className="input-field ml1 select-div">
                         <select value = {trip} onChange = {handleChange('trip')} className = 'pointer browser-default bn'>
-                            <option value="" disabled selected>Trip</option>
                             <option style={{color : 'black'}}>Round trip</option>
                             <option style={{color : 'black'}}>One way</option>
                         </select>
                     </div>
                     <div className="input-field ml1 select-div">
                         <select value = {passengers} onChange = {handleChange('passengers')} className = 'pointer browser-default bn'>
-                            <option value="" disabled selected>Passengers</option>
-                            <option>1</option>
-                            <option>2</option>
+                            <option>1 Passenger</option>
+                            <option>2 Passengers</option>
                         </select>
                     </div>
                     <div className="input-field ml1 select-div">
                         <select value = {cabin} onChange = {handleChange('cabin')} className = 'pointer browser-default bn'>
-                            <option value="" disabled selected>Cabin class</option>
                             <option>Economy</option>
                             <option>Premium Economy</option>
                             <option>Business</option>
@@ -167,7 +164,8 @@ const FlightSearch = () => {
                             />
                         </div>
                     </div>
-                    <div className="form-group col-xs-12 col-sm-3">
+                    {trip === 'Round trip'?
+                        <div className="form-group col-xs-12 col-sm-3">
                         <label className = 'b f5'>RETURN</label>
                         <div>
                             <input 
@@ -177,7 +175,9 @@ const FlightSearch = () => {
                                 onChange = {handleChange('returnDate')}
                             />
                         </div>
-                    </div>
+                        </div> :
+                        ''
+                    }
                 </div>
                 <div className="center" style = {{position : 'relative', top : '16px'}}>
                     <button 
