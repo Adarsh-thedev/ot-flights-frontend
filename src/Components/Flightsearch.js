@@ -88,7 +88,7 @@ const FlightSearch = () => {
                     destination=${destination.slice(destination.length-3)}&depart_date=${travelingDate}&return_date=${returnDate}&currency=EUR` 
                     : `https://api.travelpayouts.com/v1/prices/cheap?origin=${source.slice(source.length-3)}&
                     destination=${destination.slice(destination.length-3)}&depart_date=${travelingDate}&currency=EUR`;
-        fetch(proxyurl+url,{
+        return fetch(proxyurl+url,{
             headers:{
                 "x-access-token":"aab719c2a3af14867bb33e77183f05e7"
             }
@@ -98,10 +98,9 @@ const FlightSearch = () => {
         })
         .then(data => {
             console.log(data);
-            setSearchResult([...searchResult, data.data]);
-            console.log(searchResult);
+            return setSearchResult([...searchResult, data.data]);
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     }
 
     return(
