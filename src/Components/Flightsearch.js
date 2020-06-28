@@ -25,6 +25,8 @@ const FlightSearch = () => {
 
     const [searchResult, setSearchResult] = useState([]);
 
+    const [redirect, setRedirect] = useState(false);
+
     //set default source as the nearest international airport
     useEffect(()=> {
         fetch('https://www.travelpayouts.com/whereami?locale=en')
@@ -82,6 +84,10 @@ const FlightSearch = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(!destination){
+            return alert('Please Select a valid destination');
+        }
+
         console.log('Event triggered');
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const url = trip === 'Round trip' ? `https://api.travelpayouts.com/v1/prices/cheap?origin=${source.slice(source.length-3)}&
@@ -97,14 +103,22 @@ const FlightSearch = () => {
             return response.json()
         })
         .then(data => {
-            console.log(data);
-            return setSearchResult([...searchResult, data.data]);
+            setSearchResult([...searchResult, data.data]);
+            setRedirect(true);
+            console.log(data.data);
         })
         .catch(err => console.log(err));
     }
 
+    const getRedirect = (redirect) => {
+        if(redirect) {
+            return <h5 target ="_blank">Redirect will take place</h5>
+        }
+    }
+
     return(
         <div className = 'container' style ={{position : 'relative', bottom : '20px'}}>
+            {getRedirect(redirect)}
             <form className = 'br4 shadow-3 bg1'>
                 <div className = 'top d-flex container ml-2'>
                     <div className="input-field ml1 select-div">
