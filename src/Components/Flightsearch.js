@@ -115,7 +115,9 @@ const FlightSearch = () => {
             return <Redirect to = {{
                     pathname : '/redirect',
                     state : {
-                        searchResult
+                        searchResult,
+                        source,
+                        destination
                     },
                     target : '_blank'
                 }}
