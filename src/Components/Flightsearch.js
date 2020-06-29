@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const FlightSearch = () => {
     let nextDate = new Date();
@@ -46,7 +47,7 @@ const FlightSearch = () => {
 
     const {travelingDate, returnDate, passengers, trip, cabin} = details;
     const {source, destination} = places;
-    const {sourceSuggestion, destinationSuggtion} = suggetion;
+    //const {sourceSuggestion, destinationSuggtion} = suggetion;
 
     const handlePlaceChange = name => event => {
         setPlaces({
@@ -76,8 +77,6 @@ const FlightSearch = () => {
                     destinationSuggtion : data
                 })
             }
-            console.log(sourceSuggestion);
-            console.log(destinationSuggtion);
         })
         .catch(err => console.log(err))
     }
@@ -103,16 +102,24 @@ const FlightSearch = () => {
             return response.json()
         })
         .then(data => {
-            setSearchResult([...searchResult, data.data]);
-            setRedirect(true);
-            console.log(data.data);
+                setSearchResult([...searchResult, data.data]);
+                console.log(data.data);
+                if(data.data)
+                    setRedirect(true);
         })
         .catch(err => console.log(err));
     }
 
     const getRedirect = (redirect) => {
         if(redirect) {
-            return <h5 target ="_blank">Redirect will take place</h5>
+            return <Redirect to = {{
+                    pathname : '/redirect',
+                    state : {
+                        searchResult
+                    },
+                    target : '_blank'
+                }}
+            />
         }
     }
 
@@ -143,7 +150,7 @@ const FlightSearch = () => {
                     </div>
                 </div>
                 <div className="d-flex row justify-content-between">
-                    <div className="form-group col-xs-12 col-sm-3">
+                   <div className="form-group col-xs-12 col-sm-3">
                         <label className = 'b f5'>FROM</label>
                         <div className="autocomplete">
                             <input 
