@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/ot-flights-frontend/static/css/main.c49d760f.chunk.css",
-    "main.js": "/ot-flights-frontend/static/js/main.7e23cd83.chunk.js",
-    "main.js.map": "/ot-flights-frontend/static/js/main.7e23cd83.chunk.js.map",
+    "main.css": "/ot-flights-frontend/static/css/main.02e3e716.chunk.css",
+    "main.js": "/ot-flights-frontend/static/js/main.a546b896.chunk.js",
+    "main.js.map": "/ot-flights-frontend/static/js/main.a546b896.chunk.js.map",
     "runtime-main.js": "/ot-flights-frontend/static/js/runtime-main.142c272f.js",
     "runtime-main.js.map": "/ot-flights-frontend/static/js/runtime-main.142c272f.js.map",
     "static/css/2.3c03f26f.chunk.css": "/ot-flights-frontend/static/css/2.3c03f26f.chunk.css",
-    "static/js/2.b6b8d2b2.chunk.js": "/ot-flights-frontend/static/js/2.b6b8d2b2.chunk.js",
-    "static/js/2.b6b8d2b2.chunk.js.map": "/ot-flights-frontend/static/js/2.b6b8d2b2.chunk.js.map",
+    "static/js/2.72bbf03c.chunk.js": "/ot-flights-frontend/static/js/2.72bbf03c.chunk.js",
+    "static/js/2.72bbf03c.chunk.js.map": "/ot-flights-frontend/static/js/2.72bbf03c.chunk.js.map",
     "index.html": "/ot-flights-frontend/index.html",
-    "precache-manifest.086d3834da7eb811669135f46e647e81.js": "/ot-flights-frontend/precache-manifest.086d3834da7eb811669135f46e647e81.js",
+    "precache-manifest.721abd34b2f4aa8b20d48054d52388c0.js": "/ot-flights-frontend/precache-manifest.721abd34b2f4aa8b20d48054d52388c0.js",
     "service-worker.js": "/ot-flights-frontend/service-worker.js",
     "static/css/2.3c03f26f.chunk.css.map": "/ot-flights-frontend/static/css/2.3c03f26f.chunk.css.map",
-    "static/css/main.c49d760f.chunk.css.map": "/ot-flights-frontend/static/css/main.c49d760f.chunk.css.map",
-    "static/js/2.b6b8d2b2.chunk.js.LICENSE.txt": "/ot-flights-frontend/static/js/2.b6b8d2b2.chunk.js.LICENSE.txt",
+    "static/css/main.02e3e716.chunk.css.map": "/ot-flights-frontend/static/css/main.02e3e716.chunk.css.map",
+    "static/js/2.72bbf03c.chunk.js.LICENSE.txt": "/ot-flights-frontend/static/js/2.72bbf03c.chunk.js.LICENSE.txt",
     "static/media/about-carbon.jpg": "/ot-flights-frontend/static/media/about-carbon.c3f5250c.jpg",
     "static/media/home-img.png": "/ot-flights-frontend/static/media/home-img.05ad5d34.png",
     "static/media/jungle.jpg": "/ot-flights-frontend/static/media/jungle.e3f47e63.jpg",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.142c272f.js",
     "static/css/2.3c03f26f.chunk.css",
-    "static/js/2.b6b8d2b2.chunk.js",
-    "static/css/main.c49d760f.chunk.css",
-    "static/js/main.7e23cd83.chunk.js"
+    "static/js/2.72bbf03c.chunk.js",
+    "static/css/main.02e3e716.chunk.css",
+    "static/js/main.a546b896.chunk.js"
   ]
 }
