@@ -118,8 +118,7 @@ const FlightSearch = () => {
                         searchResult,
                         source,
                         destination
-                    },
-                    target : '_blank'
+                    }
                 }}
             />
         }
