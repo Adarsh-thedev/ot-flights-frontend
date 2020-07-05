@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import FlightSearchResults from './FlightSearchResults';
 
 const FlightSearch = () => {
     let nextDate = new Date();
@@ -9,7 +9,7 @@ const FlightSearch = () => {
     const [details, setDetails] = useState({
         travelingDate : `${new Date().toISOString().substr(0,10)}`,
         returnDate : `${nextDate.toISOString().substr(0,10)}`,
-        trip : 'One way',
+        trip : 'Round trip',
         passengers : '1 Passenger',
         cabin : 'Economy'
     });
@@ -83,7 +83,7 @@ const FlightSearch = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(!destination){
+        if(!destination || destination.length < 2){
             return alert('Please Select a valid destination');
         }
 
@@ -102,121 +102,115 @@ const FlightSearch = () => {
             return response.json()
         })
         .then(data => {
-                setSearchResult([data.data]);
-                //console.log(data.data);
-                if(data.data)
-                    setRedirect(true);
+            setSearchResult([data.data]);
+            //console.log(data);
+            if(data.data)
+                setRedirect(true);
         })
         .catch(err => console.log(err));
     }
 
-    const getRedirect = (redirect) => {
-        if(redirect) {
-            return <Redirect to = {{
-                    pathname : '/redirect',
-                    state : {
-                        searchResult,
-                        source,
-                        destination
-                    }
-                }}
-            />
-        }
+    const showSearchResult = () => {
+        return redirect && (
+            <FlightSearchResults searchResult = {searchResult}/>
+        );
     }
 
     return(
-        <div className = 'container' style ={{position : 'relative', bottom : '20px'}}>
-            {getRedirect(redirect)}
-            <form className = 'br4 shadow-3 bg1'>
-                <div className = 'top d-flex container ml-2'>
-                    <div className="input-field ml1 select-div">
-                        <select value = {trip} onChange = {handleChange('trip')} className = 'pointer browser-default bn'>
-                            <option style={{color : 'black'}}>One way</option>
-                            <option style={{color : 'black'}}>Round trip</option>
-                        </select>
-                    </div>
-                    <div className="input-field ml1 select-div">
-                        <select value = {passengers} onChange = {handleChange('passengers')} className = 'pointer browser-default bn'>
-                            <option>1 Passenger</option>
-                            <option>2 Passengers</option>
-                        </select>
-                    </div>
-                    <div className="input-field ml1 select-div">
-                        <select value = {cabin} onChange = {handleChange('cabin')} className = 'pointer browser-default bn'>
-                            <option>Economy</option>
-                            <option>Premium Economy</option>
-                            <option>Business</option>
-                            <option>First Class</option>
-                        </select>
-                    </div>
-                </div>
-                <div className="d-flex row justify-content-between">
-                   <div className="form-group col-xs-12 col-sm-3">
-                        <label className = 'b f5'>FROM</label>
-                        <div className="autocomplete">
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                placeholder='From'
-                                value = {source}
-                                onChange = {handlePlaceChange('source')}
-                            />
+        <React.Fragment>
+            <div className = 'container' style ={{position : 'relative', bottom : '20px'}}>
+                <form className = 'br4 shadow-3 bg1'>
+                    <div className = 'top d-flex container ml-2'>
+                        <div className="input-field ml1 select-div">
+                            <select value = {trip} onChange = {handleChange('trip')} className = 'pointer browser-default bn'>
+                                <option style={{color : 'black'}}>One way</option>
+                                <option style={{color : 'black'}}>Round trip</option>
+                            </select>
+                        </div>
+                        <div className="input-field ml1 select-div">
+                            <select value = {passengers} onChange = {handleChange('passengers')} className = 'pointer browser-default bn'>
+                                <option>1 Passenger</option>
+                                <option>2 Passengers</option>
+                            </select>
+                        </div>
+                        <div className="input-field ml1 select-div">
+                            <select value = {cabin} onChange = {handleChange('cabin')} className = 'pointer browser-default bn'>
+                                <option>Economy</option>
+                                <option>Premium Economy</option>
+                                <option>Business</option>
+                                <option>First Class</option>
+                            </select>
                         </div>
                     </div>
+                    <div className="d-flex row justify-content-between">
                     <div className="form-group col-xs-12 col-sm-3">
-                        <label className = 'b f5'>TO</label>
-                        <div className="autocomplete">
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                placeholder="Where to?"
-                                value={destination}
-                                onChange = {handlePlaceChange('destination')}
-                            />
+                            <label className = 'b f5'>FROM</label>
+                            <div className="autocomplete">
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    placeholder='From'
+                                    value = {source}
+                                    onChange = {handlePlaceChange('source')}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group col-xs-12 col-sm-3">
-                        <label className = 'b f5'>DEPART</label>
-                        <div>
-                            <input 
-                                type="date"
-                                className="form-control" 
-                                value={travelingDate}
-                                onChange = {handleChange('travelingDate')}
-                            />
-                        </div>
-                    </div>
-                    {trip === 'Round trip'?
                         <div className="form-group col-xs-12 col-sm-3">
-                        <label className = 'b f5'>RETURN</label>
-                        <div>
-                            <input 
-                                type="date" 
-                                className="form-control" 
-                                value={returnDate}
-                                onChange = {handleChange('returnDate')}
-                            />
+                            <label className = 'b f5'>TO</label>
+                            <div className="autocomplete">
+                                <input 
+                                    type="text" 
+                                    className="form-control" 
+                                    placeholder="Where to?"
+                                    value={destination}
+                                    onChange = {handlePlaceChange('destination')}
+                                />
+                            </div>
                         </div>
-                        </div> :
-                        ''
-                    }
-                </div>
-                <div className="center" style = {{position : 'relative', top : '16px'}}>
-                    <button 
-                        className="btn blue text-white br-pill dim b"
-                        onClick = {handleSubmit}
-                        onKeyPress = {(e) => {
-                            if(e.keyCode === 13) {
-                                handleSubmit();
-                            }
-                        }}
-                    >
-                        <i className="fa fa-send mr-2" aria-hidden="true"></i>
-                        Search Flights
-                    </button>
-                </div>
-            </form>
-        </div>
+                        <div className="form-group col-xs-12 col-sm-3">
+                            <label className = 'b f5'>DEPART</label>
+                            <div>
+                                <input 
+                                    type="date"
+                                    className="form-control" 
+                                    value={travelingDate}
+                                    onChange = {handleChange('travelingDate')}
+                                />
+                            </div>
+                        </div>
+                        {trip === 'Round trip'?
+                            <div className="form-group col-xs-12 col-sm-3">
+                            <label className = 'b f5'>RETURN</label>
+                            <div>
+                                <input 
+                                    type="date" 
+                                    className="form-control" 
+                                    value={returnDate}
+                                    onChange = {handleChange('returnDate')}
+                                />
+                            </div>
+                            </div> :
+                            ''
+                        }
+                    </div>
+                    <div className="center" style = {{position : 'relative', top : '16px'}}>
+                        <button 
+                            className="btn blue text-white br-pill dim b"
+                            onClick = {handleSubmit}
+                            onKeyPress = {(e) => {
+                                if(e.keyCode === 13) {
+                                    handleSubmit();
+                                }
+                            }}
+                        >
+                            <i className="fa fa-send mr-2" aria-hidden="true"></i>
+                            Search Flights
+                        </button>
+                    </div>
+                </form>
+            </div>
+            {showSearchResult()}
+        </React.Fragment>
     );
 }
 
