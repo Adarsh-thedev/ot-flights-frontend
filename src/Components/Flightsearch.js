@@ -112,7 +112,7 @@ const FlightSearch = () => {
 
     const showSearchResult = () => {
         return redirect && (
-            <FlightSearchResults searchResult = {searchResult}/>
+            <FlightSearchResults searchResult = {searchResult} source = {source} destination = {destination}/>
         );
     }
 
