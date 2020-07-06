@@ -9,9 +9,16 @@ const FlightSearchResults = ({searchResult, source, destination}) => {
             </h5>
             <div>
                 {Object.values(searchResult[0]).flatMap(airport =>
-                    Object.values(airport).map(({flight_number, price})=> (
+                    Object.values(airport).map(({flight_number, price, airline, departure_at, return_at})=> (
                         // console.table(flight)
-                        <Flight flightNumber={flight_number} price={price} />
+                        <Flight
+                            key = {Math.random()}
+                            flightNumber={flight_number} 
+                            price={price}
+                            airline = {airline}
+                            departureTime = {departure_at}
+                            returnTime = {return_at}
+                        />
                     ))
                 )}
             </div>
