@@ -87,7 +87,7 @@ const FlightSearch = () => {
             return alert('Please Select a valid destination');
         }
 
-        // console.log('Event triggered');
+        //console.log('Event triggered');
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
         const url = trip === 'Round trip' ? `https://api.travelpayouts.com/v1/prices/cheap?origin=${source.slice(source.length-3)}&
                     destination=${destination.slice(destination.length-3)}&depart_date=${travelingDate}&return_date=${returnDate}&currency=EUR` 
@@ -103,7 +103,7 @@ const FlightSearch = () => {
         })
         .then(data => {
             setSearchResult([data.data]);
-            //console.log(data);
+            //console.log(data.data);
             if(data.data)
                 setRedirect(true);
         })
