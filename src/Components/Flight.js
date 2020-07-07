@@ -2,7 +2,7 @@ import React from 'react';
 
 const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
     return (
-        <div className = 'bg1 row br1 shadow-1 bb b--black-20 pa2 d-flex'>
+        <div className = 'bg1 br1 shadow-1 bb b--black-20 pa2 d-flex'>
 			<a href="#book" target = '_blank' className="d-flex no-dec justify-content-between" stlye={{textDecoration:'none'}}>
                 <div className="ml1 d-flex col-4 center tc">
                     <img src = {`https://www.gstatic.com/flights/airline_logos/70px/${airline}.png`}
