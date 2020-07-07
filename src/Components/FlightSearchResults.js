@@ -3,7 +3,7 @@ import Flight from './Flight';
 
 const FlightSearchResults = ({searchResult, source, destination}) => {
     return(
-        <div className = 'container'>
+        <div className = 'container nunito'>
             <h5 className = 'center'>
                 Flights From {source.slice(0, source.length-5)} to {destination.slice(0, destination.length-5)}
             </h5>
