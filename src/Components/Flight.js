@@ -11,9 +11,15 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
 
     const showAllDetails = () => {
         return state && (
-            <div className = 'card-body bt b--black-10'>
-                <span><i className = 'fa fa-circle'></i></span> {departureTime.substr(11,5)} : San Fransisco International Airport (SFO)<br/>
-                <span><i className = 'fa fa-circle'></i></span> {returnTime.substr(11,5)} : John F. Kennedy International Airport (JFK)
+            <div className = 'card-body bt b--black-10 text-muted d-flex'>
+                <div className = 'col-xs-12 col-sm-6'>
+                    <span><i className = 'fa fa-circle'></i></span> {departureTime.substr(11,5)} : San Fransisco International Airport (SFO)<br/>
+                    <span><i className = 'fa fa-circle'></i></span> {returnTime.substr(11,5)} : John F. Kennedy International Airport (JFK)
+                </div>
+                <div className = 'col-xs-12 col-sm-6'>
+                    <i className = 'fa fa-cloud text-muted'></i><p className="dib ml2 text-muted">CO<sub>2</sub> Released:10kg</p> <br/>
+                    <i className = 'fa fa-wifi text-muted'></i><p className="dib ml2 text-muted">wifi available</p>
+                </div>
             </div>
         );
     }
@@ -36,20 +42,32 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                         <div className="airlinename text-muted">Airline</div>
                     </div>
                 </div>
-                <div className="col-xs-2">
-                    <p style={{textAlign: 'center'}}>7h 00m</p>
-                    <p className="text-muted">CO<sub>2</sub> Released:10kg</p>
-                </div>
-                <div className="col-xs-2">
-                    <p style={{textAlign: 'center'}}>2 Stops</p>
-                    <p className="text-muted">SOU-DES</p>
-                </div>
-                <div className="col-xs-2">
-                    <p style={{textAlign: 'center', color : 'green'}}>€{price}</p>
-                </div>
+                {!state ?
+                    <div className="col-xs-2">
+                        <p style={{textAlign: 'center'}}>7h 00m</p>
+                        <p className="text-muted">CO<sub>2</sub> Released:10kg</p>
+                    </div>
+                    : <div className="col-xs-2"></div>
+                }
+                {!state ?
+                    <div className="col-xs-2">
+                        <p style={{textAlign: 'center'}}>Non-stop</p>
+                        <p className="text-muted">SOU-DES</p>
+                    </div>
+                    : 
+                    <button className= 'btn br2 bg1 hover-bg-transparent b dim hover-blue ba b--blue' style = {{color: 'blue'}}>Select Flight</button>
+                }
+                    <div className="col-xs-2">
+                        <p style={{textAlign: 'center', color : 'green'}}>€{price}</p>
+                    </div>
             </div>
             <div className="col-xs-1 text-center d-flex">
-                <span onClick = {handleClick} className = 'center b f4 pointer'><i className="fa fa-chevron-circle-down"></i></span>
+                <span onClick = {handleClick} className = 'center b f4 pointer'>
+                    {!state ? 
+                        <i className="fa fa-chevron-circle-down"></i> 
+                        : <i className="fa fa-chevron-circle-up"></i>
+                    }
+                </span>
             </div>
             {showAllDetails()}
         </div>
