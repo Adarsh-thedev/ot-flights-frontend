@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7e4ad6bc8b0a2398f8da8dcfe35ac4f",
+    "revision": "dc6ae0702116a4b60a431dd074594b28",
     "url": "/ot-flights-frontend/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ot-flights-frontend/static/css/2.3c03f26f.chunk.css"
   },
   {
-    "revision": "d38885f6fa9666f131b5",
+    "revision": "a0bd90be45cb6e83b048",
     "url": "/ot-flights-frontend/static/css/main.5fa415c7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ot-flights-frontend/static/js/2.b665f59c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d38885f6fa9666f131b5",
-    "url": "/ot-flights-frontend/static/js/main.92412271.chunk.js"
+    "revision": "a0bd90be45cb6e83b048",
+    "url": "/ot-flights-frontend/static/js/main.511a0d09.chunk.js"
   },
   {
     "revision": "a3c0bf33e5ecbf3d816d",
