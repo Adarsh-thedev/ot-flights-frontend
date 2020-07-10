@@ -5,7 +5,7 @@ const FlightSearchResults = ({searchResult, source, destination}) => {
     return(
         <div className = 'container nunito'>
             <h5 className = 'center'>
-                Flights From {source.slice(0, source.length-5)} to {destination.slice(0, destination.length-5)}
+                {source.slice(0, source.length-5)} - {destination.slice(0, destination.length-5)}
             </h5>
             <div>
                 {Object.values(searchResult[0]).flatMap(airport =>
