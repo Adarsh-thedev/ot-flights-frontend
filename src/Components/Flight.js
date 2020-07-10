@@ -18,7 +18,10 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                 </div>
                 <div className = 'col-xs-12 col-sm-6'>
                     <i className = 'fa fa-cloud'></i><p className="dib ml2">CO<sub>2</sub> Released:10kg</p> <br/>
-                    <i className = 'fa fa-wifi'></i><p className="dib ml2">wifi available</p>
+                    <i className = 'fa fa-wheelchair b'></i><p className="dib ml2">Average Legroom (79cm)</p> <br/>
+                    <i className = 'fa fa-wifi'></i><p className="dib ml2">Wi-Fi</p> <br/>
+                    <i className = 'fa fa-plug'></i><p className="dib ml2">In-seat power and USB outlets</p> <br/>
+                    <i className = 'fa fa-tv'></i><p className="dib ml2">On-demand video</p>
                 </div>
             </div>
         );
