@@ -13,12 +13,12 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
         return state && (
             <div className = 'card-body bt b--black-10 text-muted d-flex'>
                 <div className = 'col-xs-12 col-sm-6'>
-                    <span><i className = 'fa fa-circle'></i></span> {departureTime.substr(11,5)} : San Fransisco International Airport (SFO)<br/>
-                    <span><i className = 'fa fa-circle'></i></span> {returnTime.substr(11,5)} : John F. Kennedy International Airport (JFK)
+                    <i className = 'fa fa-circle'></i> <p className="dib ml2">{departureTime.substr(11,5)} : San Fransisco International Airport (SFO)</p><br/>
+                    <i className = 'fa fa-circle'></i> <p className="dib ml2">{returnTime.substr(11,5)} : John F. Kennedy International Airport (JFK)</p>
                 </div>
                 <div className = 'col-xs-12 col-sm-6'>
-                    <i className = 'fa fa-cloud text-muted'></i><p className="dib ml2 text-muted">CO<sub>2</sub> Released:10kg</p> <br/>
-                    <i className = 'fa fa-wifi text-muted'></i><p className="dib ml2 text-muted">wifi available</p>
+                    <i className = 'fa fa-cloud'></i><p className="dib ml2">CO<sub>2</sub> Released:10kg</p> <br/>
+                    <i className = 'fa fa-wifi'></i><p className="dib ml2">wifi available</p>
                 </div>
             </div>
         );
