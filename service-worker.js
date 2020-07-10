@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ot-flights-frontend/precache-manifest.a34429aa7518cb528bbd77b1bd63bea9.js"
+  "/ot-flights-frontend/precache-manifest.20069c9d0b0cbd7cd5cf0f8610f7df22.js"
 );
 
 self.addEventListener('message', (event) => {
