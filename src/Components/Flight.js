@@ -57,8 +57,10 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                         <p style={{textAlign: 'center'}}>Non-stop</p>
                         <p className="text-muted">SOU-DES</p>
                     </div>
-                    : 
-                    <button className= 'col-xs-2 btn br2 bg1 hover-bg-transparent hover-bg-washed-blue b hover-blue ba b--blue' style = {{color: 'blue'}}>Select flight</button>
+                    :
+                    <div className= 'col-xs-4 col-sm-2'>
+                        <button className= 'btn br2 bg1 hover-bg-transparent hover-bg-washed-blue b hover-blue ba b--blue' style = {{color: 'blue'}}>Select</button>
+                    </div>
                 }
                     <div className="col-xs-2">
                         <p style={{textAlign: 'center', color : 'green'}}>€{price}</p>
