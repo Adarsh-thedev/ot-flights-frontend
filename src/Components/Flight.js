@@ -13,7 +13,7 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
         return state && (
             <div className = 'card-body bt b--black-10 text-muted d-flex'>
                 <div className = 'col-xs-12 col-sm-6'>
-                    <i className = 'fa fa-circle'></i> <p className="dib ml2">{departureTime.substr(11,5)} : San Fransisco International Airport (SFO)</p><br/>
+                    <i className = 'fa fa-plane'></i> <p className="dib ml2">{departureTime.substr(11,5)} : San Fransisco International Airport (SFO)</p><br/>
                     <i className = 'fa fa-circle'></i> <p className="dib ml2">{returnTime.substr(11,5)} : John F. Kennedy International Airport (JFK)</p>
                 </div>
                 <div className = 'col-xs-12 col-sm-6'>
