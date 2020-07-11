@@ -46,24 +46,24 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                     </div>
                 </div>
                 {!state ?
-                    <div className="col-xs-2">
-                        <p style={{textAlign: 'center'}}>7h 00m</p>
+                    <div className="col-xs-2 text-center">
+                        <p >7h 00m</p>
                         <p className="text-muted">CO<sub>2</sub> Released:10kg</p>
                     </div>
                     : <div className="col-xs-2"></div>
                 }
                 {!state ?
-                    <div className="col-xs-2">
-                        <p style={{textAlign: 'center'}}>Non-stop</p>
+                    <div className="col-xs-2 text-center">
+                        <p>Non-stop</p>
                         <p className="text-muted">SOU-DES</p>
                     </div>
                     :
-                    <div className= 'col-xs-4 col-sm-2'>
-                        <button className= 'btn br2 bg1 hover-bg-transparent hover-bg-washed-blue b hover-blue ba b--blue' style = {{color: 'blue'}}>Select</button>
+                    <div className= 'col-xs-4 col-md-2'>
+                        <button className= 'btn br2 b btn-outline-primary'>Select flight</button>
                     </div>
                 }
-                    <div className="col-xs-2">
-                        <p style={{textAlign: 'center', color : 'green'}}>€{price}</p>
+                    <div className="col-xs-2 text-center">
+                        <p style={{color : 'green'}}>€{price}</p>
                     </div>
             </div>
             <div className="col-xs-1 text-center d-flex">
