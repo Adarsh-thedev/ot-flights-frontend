@@ -119,7 +119,7 @@ const FlightSearch = () => {
     return(
         <React.Fragment>
             <div className = 'container' style ={{position : 'relative', bottom : '20px'}}>
-                <form className = 'br4 shadow-3 bg1'>
+                <form className = 'br4 ph2 shadow-3 bg1'>
                     <div className = 'top d-flex container ml-2'>
                         <div className="input-field ml1 select-div">
                             <select value = {trip} onChange = {handleChange('trip')} className = 'pointer browser-default bn'>
