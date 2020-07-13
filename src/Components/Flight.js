@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 
 const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
 
@@ -25,6 +26,10 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                 </div>
             </div>
         );
+    }
+
+    const getToken = () =>{
+        //
     }
 
     return (
@@ -59,7 +64,14 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                     </div>
                     :
                     <div className= 'col-xs-4 col-md-2'>
-                        <button className= 'btn br2 b btn-outline-primary'>Select flight</button>
+                        <StripeCheckout
+                            token={getToken}
+                            stripeKey="pk_test_J1QnVQbexFpT7xGQcbFmCZCN00IEL47oYp"
+                            amount = {price*100}
+                            currency = 'EUR'
+                        >
+                            <button className= 'btn br2 b btn-outline-primary'>Select flight</button>
+                        </StripeCheckout>
                     </div>
                 }
                     <div className="col-xs-2 text-center">
