@@ -12,7 +12,7 @@ const Header = () => {
         <div>
             <div style = {sectionStyle}>
                 <div className = 'col-md-4' style = {{float : 'right'}}>
-                    <p className = 'text-white h1 mt5'>FLY WITH RESPONSIBLY WITH OPENTABS</p>
+                    <p className = 'text-white h1 mt5'>FLY RESPONSIBLY WITH OPENTABS</p>
                 </div>
             </div>
         </div>
