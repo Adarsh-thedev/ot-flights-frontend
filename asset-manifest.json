@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ot-flights-frontend/static/css/main.5fa415c7.chunk.css",
-    "main.js": "/ot-flights-frontend/static/js/main.73548869.chunk.js",
-    "main.js.map": "/ot-flights-frontend/static/js/main.73548869.chunk.js.map",
+    "main.js": "/ot-flights-frontend/static/js/main.aff504bc.chunk.js",
+    "main.js.map": "/ot-flights-frontend/static/js/main.aff504bc.chunk.js.map",
     "runtime-main.js": "/ot-flights-frontend/static/js/runtime-main.142c272f.js",
     "runtime-main.js.map": "/ot-flights-frontend/static/js/runtime-main.142c272f.js.map",
     "static/css/2.3c03f26f.chunk.css": "/ot-flights-frontend/static/css/2.3c03f26f.chunk.css",
     "static/js/2.a7d1e1ab.chunk.js": "/ot-flights-frontend/static/js/2.a7d1e1ab.chunk.js",
     "static/js/2.a7d1e1ab.chunk.js.map": "/ot-flights-frontend/static/js/2.a7d1e1ab.chunk.js.map",
     "index.html": "/ot-flights-frontend/index.html",
-    "precache-manifest.6b1fb4554401ef6e62c9e6ba4dc81c7f.js": "/ot-flights-frontend/precache-manifest.6b1fb4554401ef6e62c9e6ba4dc81c7f.js",
+    "precache-manifest.77b7633cce54a5731799d4a33f504eb7.js": "/ot-flights-frontend/precache-manifest.77b7633cce54a5731799d4a33f504eb7.js",
     "service-worker.js": "/ot-flights-frontend/service-worker.js",
     "static/css/2.3c03f26f.chunk.css.map": "/ot-flights-frontend/static/css/2.3c03f26f.chunk.css.map",
     "static/css/main.5fa415c7.chunk.css.map": "/ot-flights-frontend/static/css/main.5fa415c7.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.3c03f26f.chunk.css",
     "static/js/2.a7d1e1ab.chunk.js",
     "static/css/main.5fa415c7.chunk.css",
-    "static/js/main.73548869.chunk.js"
+    "static/js/main.aff504bc.chunk.js"
   ]
 }
