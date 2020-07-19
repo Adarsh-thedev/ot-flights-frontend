@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
-import StripeCheckout from 'react-stripe-checkout';
+import { Redirect } from 'react-router-dom';
 
 const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
 
     const [state, setState] = useState(false);
 
+    const [redirect, setRedirect] = useState(false)
+
     const handleClick = event => {
         event.preventDefault();
         setState(!state);
+    }
+
+    const onSelect = () => {
+        return setTimeout(() => {
+            setRedirect(!redirect)
+        }, 2000);
+    }
+
+    const getRedirect = (redirect) => {
+        if(redirect){
+            return <Redirect to = 'carbon-offset'/>
+        }
     }
 
     const showAllDetails = () => {
@@ -26,10 +40,6 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                 </div>
             </div>
         );
-    }
-
-    const getToken = () =>{
-        //
     }
 
     return (
@@ -64,14 +74,12 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                     </div>
                     :
                     <div className= 'col-xs-4 col-md-2'>
-                        <StripeCheckout
-                            token={getToken}
-                            stripeKey="pk_test_J1QnVQbexFpT7xGQcbFmCZCN00IEL47oYp"
-                            amount = {price*100}
-                            currency = 'EUR'
+                        <button 
+                            className= 'btn br2 b btn-outline-primary'
+                            onClick = {onSelect}
                         >
-                            <button className= 'btn br2 b btn-outline-primary'>Select flight</button>
-                        </StripeCheckout>
+                            Select flight
+                        </button>
                     </div>
                 }
                     <div className="col-xs-2 text-center">
@@ -87,6 +95,7 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
                 </span>
             </div>
             {showAllDetails()}
+            {getRedirect(redirect)}
         </div>
     );
 }
