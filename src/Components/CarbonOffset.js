@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import Base from './Base';
+import StripeCheckOut from 'react-stripe-checkout';
 
 const CarbonOffset = () => {
     const [amount, setAmount] = useState(100);
@@ -50,7 +51,12 @@ const CarbonOffset = () => {
                     <div>
                         <span className = 'f4' style={{color:'green'}}>Pledge: € {amount}</span> 
                         <input className = 'dib' type = 'number' max = {amount} min = {amount} value = {amount} onChange = {onAmountChange}/>
-                        <button type="submit" href="payment" className="btn btn-outline-success">Pledge Now</button>
+                        <StripeCheckOut
+                            name = 'Pay Compensation'
+                            description = 'One step towards better future'
+                        >
+                            <button type="submit" href="payment" className="btn btn-outline-success">Pledge Now</button>
+                        </StripeCheckOut>
                     </div>
                 </div>
 
