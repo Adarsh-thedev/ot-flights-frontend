@@ -13,14 +13,12 @@ const Flight = ({flightNumber, price, airline, departureTime, returnTime}) => {
     }
 
     const onSelect = () => {
-        return setTimeout(() => {
-            setRedirect(!redirect)
-        }, 2000);
+        return setRedirect(!redirect);
     }
 
     const getRedirect = (redirect) => {
         if(redirect){
-            return <Redirect to = 'carbon-offset'/>
+            return <Redirect to = '/carbon-offset'/>
         }
     }
 
