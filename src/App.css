@@ -3,7 +3,12 @@
 }
 
 .nav{
-  background-color:#fff
+  background-color:#fff;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration : none !important;
 }
 
 .footer{
