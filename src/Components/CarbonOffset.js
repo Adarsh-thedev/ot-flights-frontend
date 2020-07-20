@@ -48,6 +48,9 @@ const CarbonOffset = () => {
                             <StripeCheckOut
                                 name = 'Pay Compensation'
                                 description = 'One step towards better future'
+                                amount = {amount * 100}
+                                currency = 'EUR'
+                                stripeKey = 'pk_test_J1QnVQbexFpT7xGQcbFmCZCN00IEL47oYp'
                             >
                                 <button type="submit" href="payment" className="btn b ml2 btn-outline-success">Pledge Now</button>
                             </StripeCheckOut>
