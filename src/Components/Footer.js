@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return(
-        <div className = 'no-margin2 footer'>
-            <div className = 'container'>
-                <div className = 'row justify-content-center f4'>
+        <div className = 'footer bg1'>
+            <div className = 'container center'>
+                <div className = 'justify-content-center f4'>
                     <a href="https://www.instagram.com/open_tabs/" rel = 'noopener noreferrer' target="_blank">
                         <i className="fa fa-instagram fa-lg mr-4"> </i>
                     </a>
@@ -19,6 +19,7 @@ const Footer = () => {
 					<p> © 2020 OpenTabs</p>
 				</div>
             </div>
+            <div className = 'no-margin-2'></div>
         </div>
     );
 }
