@@ -10,6 +10,10 @@ const CarbonOffset = () => {
         setAmount(event.target.value);
     }
 
+    const getToken = () => {
+        //
+    }
+
    return(
     <Base>
         <section className="section offset wow fadeIn container nunito" style = {{backgroundImage : `url(${Air})`, width : '100%', backgroundRepeat : 'no-repeat'}}>
@@ -48,6 +52,7 @@ const CarbonOffset = () => {
                                 description = 'One step towards better future'
                                 amount = {amount * 100}
                                 currency = 'EUR'
+                                token = {getToken}
                                 stripeKey = 'pk_test_J1QnVQbexFpT7xGQcbFmCZCN00IEL47oYp'
                             >
                                 <button type="submit" href="payment" className="btn f6 col-sm-8 col-md-4 b ml2 btn-outline-success">Pledge & book</button>
