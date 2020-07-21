@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import FlightSearchResults from './FlightSearchResults';
+import { Redirect } from 'react-router-dom';
 
 const FlightSearch = () => {
     let nextDate = new Date();
@@ -112,7 +112,14 @@ const FlightSearch = () => {
 
     const showSearchResult = () => {
         return redirect && (
-            <FlightSearchResults searchResult = {searchResult} source = {source} destination = {destination}/>
+            <Redirect to = {{
+                pathname : '/flights',
+                state : {
+                    searchResult,
+                    source, 
+                    destination
+                }
+            }} />
         );
     }
 
