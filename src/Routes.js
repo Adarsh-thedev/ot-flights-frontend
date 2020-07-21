@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import App from './App';
+import FlightSearchResults from './Components/FlightSearchResults';
 import CarbonOffset from './Components/CarbonOffset';
 
 const Routes = () => {
@@ -8,7 +9,8 @@ const Routes = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path = '/carbon-offset' component = {CarbonOffset}/>
-                <Route path = '/' component = {App}/>
+                <Route exact path = '/flights' component = {FlightSearchResults} />
+                <Route exact path = '/' component = {App}/>
             </Switch>
         </BrowserRouter>
     );
