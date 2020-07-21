@@ -210,8 +210,7 @@ const FlightSearch = () => {
                                 }
                             }}
                         >
-                            <i className="fa fa-send mr-2" aria-hidden="true"></i>
-                            Search Flights
+                            <i className="fa fa-send mr-2" aria-hidden="true"> Search Flights</i>
                         </button>
                     </div>
                 </form>
