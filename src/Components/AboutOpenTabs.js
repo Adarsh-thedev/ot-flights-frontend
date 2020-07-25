@@ -13,7 +13,7 @@ const manualOpacity = {
   opacity: "0.5",
   position: "absolute",
   width: "100%",
-  height: "200%",
+  height: "123%",
 };
 
 const AboutOpenTabs = () => {
