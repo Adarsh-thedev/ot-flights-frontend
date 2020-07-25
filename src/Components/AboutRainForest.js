@@ -21,7 +21,7 @@ const manualOpacity = {
 
 const AboutRainForest = () => {
   return (
-    <div style={backgroundStyle} className="no-margin2">
+    <div style={backgroundStyle} className="no-margin">
       <div style={manualOpacity}></div>
       <div className="container">
         <div className="row">

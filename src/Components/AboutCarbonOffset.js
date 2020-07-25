@@ -20,7 +20,7 @@ const manualOpacity = {
 
 const AboutCarbonOffset = () => {
   return (
-    <div className="no-margin" style={backgroundStyle}>
+    <div style={backgroundStyle}>
       <div style={manualOpacity}></div>
       <div className="container">
         <div className="row">
