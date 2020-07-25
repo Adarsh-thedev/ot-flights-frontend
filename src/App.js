@@ -8,6 +8,7 @@ import AboutOpenTabs from "./Components/AboutOpenTabs";
 import AboutCarbonOffset from "./Components/AboutCarbonOffset";
 import AboutRainForest from "./Components/AboutRainForest";
 import HowItWorks from "./Components/HowItWorks";
+import AwardWinnigStartup from "./Components/AwardWinnigStartup";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Stats />
           <AboutOpenTabs />
           <HowItWorks />
+          <AwardWinnigStartup />
           <AboutCarbonOffset />
           <AboutRainForest />
         </Slide>
